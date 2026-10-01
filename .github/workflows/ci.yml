@@ -1,0 +1,30 @@
+name: CI Build & Type Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node.version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Build & Type Check
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: "https://placeholder-instance.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "placeholder-anon-key"
+          SUPABASE_SERVICE_ROLE_KEY: "placeholder-service-role-key"
+        run: npm run build

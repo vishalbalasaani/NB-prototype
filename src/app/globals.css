@@ -1,26 +1,333 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #5B4B8A;
+    --primary-dark: #433665;
+    --primary-light: #F0EDF6;
+    --background: #F7F6F3;
+    --surface: #FFFFFF;
+    --main-text: #20201F;
+    --secondary-text: #6F6D68;
+    --border: #E5E2DC;
+    --border-light: #F0EFEA;
+    --success: #557A61;
+    --success-light: #EFF5F1;
+    --warning: #B8874A;
+    --warning-light: #FDF7EF;
+    --error: #B65C55;
+    --error-light: #FBF1F0;
+
+    /* Global Background Gradient Tokens (Top: #E9E1FA, Middle: #F4F1F8, Bottom: #F7F6F3) */
+    --nb-app-bg-gradient: linear-gradient(
+      180deg,
+      rgba(233, 225, 250, 0.50) 0%,
+      rgba(244, 241, 248, 0.75) 35%,
+      #F7F6F3 100%
+    );
+    --nb-login-bg-gradient: linear-gradient(
+      180deg,
+      #E9E1FA 0%,
+      #F4F1F8 42%,
+      #F7F6F3 100%
+    );
+    --nb-splash-bg-gradient: linear-gradient(
+      180deg,
+      #E4DCF8 0%,
+      #EFEAF6 40%,
+      #F7F6F3 100%
+    );
+  }
+
+  * {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    background: #FFFFFF;
+    color: var(--main-text);
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+    touch-action: manipulation;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Utilities for NodeBricks */
+.bg-nb-app {
+  background: var(--nb-app-bg-gradient);
+  background-attachment: fixed;
 }
+.bg-nb-login {
+  background: var(--nb-login-bg-gradient);
+  background-attachment: fixed;
+}
+.bg-nb-splash {
+  background: var(--nb-splash-bg-gradient);
+}
+
+.bg-nb-bg {
+  background-color: var(--background);
+}
+.bg-nb-surface {
+  background-color: var(--surface);
+}
+.bg-nb-primary {
+  background-color: var(--primary);
+}
+.bg-nb-primary-dark {
+  background-color: var(--primary-dark);
+}
+.bg-nb-primary-light {
+  background-color: var(--primary-light);
+}
+
+.text-nb-main {
+  color: var(--main-text);
+}
+.text-nb-secondary {
+  color: var(--secondary-text);
+}
+.text-nb-primary {
+  color: var(--primary);
+}
+.text-nb-success {
+  color: var(--success);
+}
+.text-nb-warning {
+  color: var(--warning);
+}
+.text-nb-error {
+  color: var(--error);
+}
+
+.border-nb {
+  border-color: var(--border);
+}
+.border-nb-light {
+  border-color: var(--border-light);
+}
+
+/* Button & interactive states */
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 150ms ease, opacity 150ms ease, transform 100ms ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--main-text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease;
+  cursor: pointer;
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: #FBFBFA;
+  border-color: #D3CFC7;
+}
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: var(--secondary-text);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: color 150ms ease, background-color 150ms ease;
+  cursor: pointer;
+  border: none;
+}
+.btn-tertiary:hover:not(:disabled) {
+  color: var(--main-text);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D5CD;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFB9AE;
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print Styles for Reports */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-before {
+    page-break-before: always;
+  }
+}
+
+/* 4-Second Carousel Slide Progress Bar Animation */
+@keyframes nbSlideProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-nb-progress {
+  animation: nbSlideProgress 4000ms linear forwards;
+}
+
+/* NodeBricks Chart Entrance Keyframe Animations */
+@keyframes nbBarGrow {
+  from {
+    height: 0%;
+  }
+  to {
+    height: var(--bar-height);
+  }
+}
+
+@keyframes nbLineDraw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes nbPointFade {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes nbDonutDraw {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: var(--donut-array);
+  }
+}
+
+@keyframes nbBarWidthGrow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--bar-width);
+  }
+}
+
+.nb-bar-grow {
+  animation: nbBarGrow 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.nb-line-draw {
+  animation: nbLineDraw 750ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.nb-point-fade {
+  animation: nbPointFade 300ms ease-out forwards;
+}
+
+.nb-donut-draw {
+  animation: nbDonutDraw 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.nb-bar-width-grow {
+  animation: nbBarWidthGrow 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-bar-grow,
+  .nb-line-draw,
+  .nb-point-fade,
+  .nb-donut-draw,
+  .nb-bar-width-grow {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+
