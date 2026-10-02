@@ -1036,6 +1036,12 @@ export const DataService = {
           .on('postgres_changes', { event: '*', schema: 'public', table: 'attendance_records' }, () => {
             this.syncFromDatabase();
           })
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'updates' }, () => {
+            this.syncFromDatabase();
+          })
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'student_results' }, () => {
+            this.syncFromDatabase();
+          })
           .subscribe();
 
         // Background periodic sync every 4 seconds to guarantee real-time reflection across devices

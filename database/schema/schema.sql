@@ -388,3 +388,40 @@ CREATE POLICY "Authenticated users can view school files"
 ON storage.objects FOR SELECT
 TO authenticated
 USING (bucket_id IN ('school-files', 'student-reports'));
+
+-- ==========================================================
+-- REALTIME REPLICATION (For Live Push Notifications & Sync)
+-- ==========================================================
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_publication_tables 
+        WHERE pubname = 'supabase_realtime' AND tablename = 'attendance_sessions'
+    ) THEN
+        ALTER PUBLICATION supabase_realtime ADD TABLE public.attendance_sessions;
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_publication_tables 
+        WHERE pubname = 'supabase_realtime' AND tablename = 'attendance_records'
+    ) THEN
+        ALTER PUBLICATION supabase_realtime ADD TABLE public.attendance_records;
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_publication_tables 
+        WHERE pubname = 'supabase_realtime' AND tablename = 'updates'
+    ) THEN
+        ALTER PUBLICATION supabase_realtime ADD TABLE public.updates;
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_publication_tables 
+        WHERE pubname = 'supabase_realtime' AND tablename = 'student_results'
+    ) THEN
+        ALTER PUBLICATION supabase_realtime ADD TABLE public.student_results;
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- Gracefully ignore if running in environment without supabase_realtime publication
+END $$;

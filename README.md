@@ -143,7 +143,7 @@ Your `.env.local` is ignored and will **not** be pushed to GitHub.
 
 ```bash
 # Add your remote if not already added
-git remote add origin https://github.com/vishalbalasaani/NodeBricks-Prototype.git
+git remote add origin https://github.com/vishalbalasaani/NB-prototype.git
 
 # Stage, commit, and push
 git add .
