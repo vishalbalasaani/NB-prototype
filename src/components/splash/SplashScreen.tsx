@@ -23,6 +23,25 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    // Pre-cache all login images during the 3-second splash screen for instant, zero-lag transitions
+    if (typeof window !== 'undefined') {
+      const preloadList = [
+        '/images/desktop_slide1_campus.jpg',
+        '/images/desktop_slide2_classroom.jpg',
+        '/images/desktop_slide3_report.jpg',
+        '/images/slide1_campus.jpg',
+        '/images/slide2_classroom.jpg',
+        '/images/slide3_report.jpg',
+        '/images/nodebricks-logo-white-tight.png',
+        '/images/nodebricks-icon-purple.png',
+        '/images/nodebricks-icon-white.png',
+      ];
+      preloadList.forEach((src) => {
+        const img = new window.Image();
+        img.src = src;
+      });
+    }
+
     // 1. Trigger subtle logo entrance animation immediately on mount
     const entranceTimer = setTimeout(() => {
       setIsMounted(true);

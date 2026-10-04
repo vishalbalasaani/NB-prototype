@@ -398,6 +398,9 @@ export async function generateExamMemoPdf(
   return `data:text/html;charset=utf-8,${encodeURIComponent(memoHtml)}`;
 }
 
+let isSyncing = false;
+let syncQueued = false;
+
 // ==========================================================
 // CORE NODEBRICKS DATA SERVICE
 // ==========================================================
@@ -411,9 +414,28 @@ export const DataService = {
   },
 
   /**
-   * Synchronize live data from Supabase
+   * Synchronize live data from Supabase (concurrency-locked & debounced for smooth UI)
    */
   async syncFromDatabase(): Promise<void> {
+    if (isSyncing) {
+      syncQueued = true;
+      return;
+    }
+    isSyncing = true;
+    try {
+      await this._executeSync();
+    } finally {
+      isSyncing = false;
+      if (syncQueued) {
+        syncQueued = false;
+        setTimeout(() => {
+          DataService.syncFromDatabase();
+        }, 150);
+      }
+    }
+  },
+
+  async _executeSync(): Promise<void> {
     // 0. Try server-side API endpoint first (bypasses RLS)
     if (typeof window !== 'undefined') {
       try {
@@ -1044,13 +1066,23 @@ export const DataService = {
           })
           .subscribe();
 
-        // Background periodic sync every 4 seconds to guarantee real-time reflection across devices
+        // Background periodic sync (every 5s, throttled when tab is hidden to eliminate lag)
         const syncInterval = setInterval(() => {
+          if (typeof document !== 'undefined' && document.hidden) return;
           this.syncFromDatabase();
-        }, 4000);
+        }, 5000);
+
+        // Instant refresh when user returns to the tab
+        const onVisibilityChange = () => {
+          if (typeof document !== 'undefined' && !document.hidden) {
+            this.syncFromDatabase();
+          }
+        };
+        document.addEventListener('visibilitychange', onVisibilityChange);
 
         window.addEventListener('beforeunload', () => {
           clearInterval(syncInterval);
+          document.removeEventListener('visibilitychange', onVisibilityChange);
           if (supabase) supabase.removeChannel(channel);
         });
       } catch (err) {
