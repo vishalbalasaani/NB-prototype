@@ -217,14 +217,801 @@ export const STANDARD_CLASSES: SchoolClass[] = [
   { id: 'c0000000-0000-0000-0000-000000000009', school_id: SCHOOL_ID, name: 'Class 9', display_order: 9 },
   { id: 'c0000000-0000-0000-0000-000000000010', school_id: SCHOOL_ID, name: 'Class 10', display_order: 10 },
 ];
+export const STANDARD_SECTIONS: Section[] = [
+  { id: 's0000000-0000-0000-0000-000000000005', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000005', name: 'A' },
+  { id: 's0000000-0000-0000-0000-000000000006', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000006', name: 'A' },
+  { id: 's0000000-0000-0000-0000-000000000007', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000007', name: 'A' },
+  { id: 's0000000-0000-0000-0000-000000000008', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000008', name: 'A' },
+  { id: 's0000000-0000-0000-0000-000000000009', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000009', name: 'A' },
+  { id: 's0000000-0000-0000-0000-000000000010', school_id: SCHOOL_ID, class_id: 'c0000000-0000-0000-0000-000000000010', name: 'A' },
+];
+
+export const STANDARD_STUDENTS: Student[] = [
+  // Class 5
+  {
+    id: 'st-05-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-05-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Aarav Sharma',
+    first_name: 'Aarav',
+    last_name: 'Sharma',
+    class_id: 'c0000000-0000-0000-0000-000000000005',
+    section_id: 's0000000-0000-0000-0000-000000000005',
+    status: 'active',
+    parent: {
+      id: 'p-05-01',
+      school_id: SCHOOL_ID,
+      name: 'Rajesh Sharma',
+      guardian_name: 'Rajesh Sharma',
+      phone: '+91 98765 43210',
+      whatsapp_number: '+91 98765 43210',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-05-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-05-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Ananya Patel',
+    first_name: 'Ananya',
+    last_name: 'Patel',
+    class_id: 'c0000000-0000-0000-0000-000000000005',
+    section_id: 's0000000-0000-0000-0000-000000000005',
+    status: 'active',
+    parent: {
+      id: 'p-05-02',
+      school_id: SCHOOL_ID,
+      name: 'Sunita Patel',
+      guardian_name: 'Sunita Patel',
+      phone: '+91 98765 43211',
+      whatsapp_number: '+91 98765 43211',
+      relationship: 'Mother',
+    },
+  },
+  {
+    id: 'st-05-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-05-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Rohan Mehta',
+    first_name: 'Rohan',
+    last_name: 'Mehta',
+    class_id: 'c0000000-0000-0000-0000-000000000005',
+    section_id: 's0000000-0000-0000-0000-000000000005',
+    status: 'active',
+    parent: {
+      id: 'p-05-03',
+      school_id: SCHOOL_ID,
+      name: 'Vikram Mehta',
+      guardian_name: 'Vikram Mehta',
+      phone: '+91 98765 43212',
+      whatsapp_number: '+91 98765 43212',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-05-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-05-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Ishaan Verma',
+    first_name: 'Ishaan',
+    last_name: 'Verma',
+    class_id: 'c0000000-0000-0000-0000-000000000005',
+    section_id: 's0000000-0000-0000-0000-000000000005',
+    status: 'active',
+    parent: {
+      id: 'p-05-04',
+      school_id: SCHOOL_ID,
+      name: 'Sanjay Verma',
+      guardian_name: 'Sanjay Verma',
+      phone: '+91 98765 43213',
+      whatsapp_number: '+91 98765 43213',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-05-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-05-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Diya Nair',
+    first_name: 'Diya',
+    last_name: 'Nair',
+    class_id: 'c0000000-0000-0000-0000-000000000005',
+    section_id: 's0000000-0000-0000-0000-000000000005',
+    status: 'active',
+    parent: {
+      id: 'p-05-05',
+      school_id: SCHOOL_ID,
+      name: 'Deepa Nair',
+      guardian_name: 'Deepa Nair',
+      phone: '+91 98765 43214',
+      whatsapp_number: '+91 98765 43214',
+      relationship: 'Mother',
+    },
+  },
+
+  // Class 6
+  {
+    id: 'st-06-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-06-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Aditya Rao',
+    first_name: 'Aditya',
+    last_name: 'Rao',
+    class_id: 'c0000000-0000-0000-0000-000000000006',
+    section_id: 's0000000-0000-0000-0000-000000000006',
+    status: 'active',
+    parent: {
+      id: 'p-06-01',
+      school_id: SCHOOL_ID,
+      name: 'Venkat Rao',
+      guardian_name: 'Venkat Rao',
+      phone: '+91 98765 43220',
+      whatsapp_number: '+91 98765 43220',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-06-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-06-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Kavya Iyer',
+    first_name: 'Kavya',
+    last_name: 'Iyer',
+    class_id: 'c0000000-0000-0000-0000-000000000006',
+    section_id: 's0000000-0000-0000-0000-000000000006',
+    status: 'active',
+    parent: {
+      id: 'p-06-02',
+      school_id: SCHOOL_ID,
+      name: 'Ramesh Iyer',
+      guardian_name: 'Ramesh Iyer',
+      phone: '+91 98765 43221',
+      whatsapp_number: '+91 98765 43221',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-06-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-06-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Siddharth Joshi',
+    first_name: 'Siddharth',
+    last_name: 'Joshi',
+    class_id: 'c0000000-0000-0000-0000-000000000006',
+    section_id: 's0000000-0000-0000-0000-000000000006',
+    status: 'active',
+    parent: {
+      id: 'p-06-03',
+      school_id: SCHOOL_ID,
+      name: 'Amit Joshi',
+      guardian_name: 'Amit Joshi',
+      phone: '+91 98765 43222',
+      whatsapp_number: '+91 98765 43222',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-06-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-06-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Sneha Reddy',
+    first_name: 'Sneha',
+    last_name: 'Reddy',
+    class_id: 'c0000000-0000-0000-0000-000000000006',
+    section_id: 's0000000-0000-0000-0000-000000000006',
+    status: 'active',
+    parent: {
+      id: 'p-06-04',
+      school_id: SCHOOL_ID,
+      name: 'Madhav Reddy',
+      guardian_name: 'Madhav Reddy',
+      phone: '+91 98765 43223',
+      whatsapp_number: '+91 98765 43223',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-06-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-06-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Aryan Gupta',
+    first_name: 'Aryan',
+    last_name: 'Gupta',
+    class_id: 'c0000000-0000-0000-0000-000000000006',
+    section_id: 's0000000-0000-0000-0000-000000000006',
+    status: 'active',
+    parent: {
+      id: 'p-06-05',
+      school_id: SCHOOL_ID,
+      name: 'Manoj Gupta',
+      guardian_name: 'Manoj Gupta',
+      phone: '+91 98765 43224',
+      whatsapp_number: '+91 98765 43224',
+      relationship: 'Father',
+    },
+  },
+
+  // Class 7
+  {
+    id: 'st-07-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-07-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Anand Varma',
+    first_name: 'Anand',
+    last_name: 'Varma',
+    class_id: 'c0000000-0000-0000-0000-000000000007',
+    section_id: 's0000000-0000-0000-0000-000000000007',
+    status: 'active',
+    parent: {
+      id: 'p-07-01',
+      school_id: SCHOOL_ID,
+      name: 'Kailash Varma',
+      guardian_name: 'Kailash Varma',
+      phone: '+91 98765 43230',
+      whatsapp_number: '+91 98765 43230',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-07-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-07-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Bhavna Sen',
+    first_name: 'Bhavna',
+    last_name: 'Sen',
+    class_id: 'c0000000-0000-0000-0000-000000000007',
+    section_id: 's0000000-0000-0000-0000-000000000007',
+    status: 'active',
+    parent: {
+      id: 'p-07-02',
+      school_id: SCHOOL_ID,
+      name: 'Pradip Sen',
+      guardian_name: 'Pradip Sen',
+      phone: '+91 98765 43231',
+      whatsapp_number: '+91 98765 43231',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-07-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-07-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Chirag Deshmukh',
+    first_name: 'Chirag',
+    last_name: 'Deshmukh',
+    class_id: 'c0000000-0000-0000-0000-000000000007',
+    section_id: 's0000000-0000-0000-0000-000000000007',
+    status: 'active',
+    parent: {
+      id: 'p-07-03',
+      school_id: SCHOOL_ID,
+      name: 'Prakash Deshmukh',
+      guardian_name: 'Prakash Deshmukh',
+      phone: '+91 98765 43232',
+      whatsapp_number: '+91 98765 43232',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-07-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-07-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Divya Kulkarni',
+    first_name: 'Divya',
+    last_name: 'Kulkarni',
+    class_id: 'c0000000-0000-0000-0000-000000000007',
+    section_id: 's0000000-0000-0000-0000-000000000007',
+    status: 'active',
+    parent: {
+      id: 'p-07-04',
+      school_id: SCHOOL_ID,
+      name: 'Anand Kulkarni',
+      guardian_name: 'Anand Kulkarni',
+      phone: '+91 98765 43233',
+      whatsapp_number: '+91 98765 43233',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-07-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-07-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Eshan Malhotra',
+    first_name: 'Eshan',
+    last_name: 'Malhotra',
+    class_id: 'c0000000-0000-0000-0000-000000000007',
+    section_id: 's0000000-0000-0000-0000-000000000007',
+    status: 'active',
+    parent: {
+      id: 'p-07-05',
+      school_id: SCHOOL_ID,
+      name: 'Rohit Malhotra',
+      guardian_name: 'Rohit Malhotra',
+      phone: '+91 98765 43234',
+      whatsapp_number: '+91 98765 43234',
+      relationship: 'Father',
+    },
+  },
+
+  // Class 8
+  {
+    id: 'st-08-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-08-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Farhan Akhtar',
+    first_name: 'Farhan',
+    last_name: 'Akhtar',
+    class_id: 'c0000000-0000-0000-0000-000000000008',
+    section_id: 's0000000-0000-0000-0000-000000000008',
+    status: 'active',
+    parent: {
+      id: 'p-08-01',
+      school_id: SCHOOL_ID,
+      name: 'Javed Akhtar',
+      guardian_name: 'Javed Akhtar',
+      phone: '+91 98765 43240',
+      whatsapp_number: '+91 98765 43240',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-08-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-08-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Gauri Chawla',
+    first_name: 'Gauri',
+    last_name: 'Chawla',
+    class_id: 'c0000000-0000-0000-0000-000000000008',
+    section_id: 's0000000-0000-0000-0000-000000000008',
+    status: 'active',
+    parent: {
+      id: 'p-08-02',
+      school_id: SCHOOL_ID,
+      name: 'Meena Chawla',
+      guardian_name: 'Meena Chawla',
+      phone: '+91 98765 43241',
+      whatsapp_number: '+91 98765 43241',
+      relationship: 'Mother',
+    },
+  },
+  {
+    id: 'st-08-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-08-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Harsh Vardhan',
+    first_name: 'Harsh',
+    last_name: 'Vardhan',
+    class_id: 'c0000000-0000-0000-0000-000000000008',
+    section_id: 's0000000-0000-0000-0000-000000000008',
+    status: 'active',
+    parent: {
+      id: 'p-08-03',
+      school_id: SCHOOL_ID,
+      name: 'Alok Vardhan',
+      guardian_name: 'Alok Vardhan',
+      phone: '+91 98765 43242',
+      whatsapp_number: '+91 98765 43242',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-08-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-08-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Ishita Das',
+    first_name: 'Ishita',
+    last_name: 'Das',
+    class_id: 'c0000000-0000-0000-0000-000000000008',
+    section_id: 's0000000-0000-0000-0000-000000000008',
+    status: 'active',
+    parent: {
+      id: 'p-08-04',
+      school_id: SCHOOL_ID,
+      name: 'Subhash Das',
+      guardian_name: 'Subhash Das',
+      phone: '+91 98765 43243',
+      whatsapp_number: '+91 98765 43243',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-08-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-08-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Jai Singhania',
+    first_name: 'Jai',
+    last_name: 'Singhania',
+    class_id: 'c0000000-0000-0000-0000-000000000008',
+    section_id: 's0000000-0000-0000-0000-000000000008',
+    status: 'active',
+    parent: {
+      id: 'p-08-05',
+      school_id: SCHOOL_ID,
+      name: 'Ajay Singhania',
+      guardian_name: 'Ajay Singhania',
+      phone: '+91 98765 43244',
+      whatsapp_number: '+91 98765 43244',
+      relationship: 'Father',
+    },
+  },
+
+  // Class 9
+  {
+    id: 'st-09-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-09-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Kabir Kapoor',
+    first_name: 'Kabir',
+    last_name: 'Kapoor',
+    class_id: 'c0000000-0000-0000-0000-000000000009',
+    section_id: 's0000000-0000-0000-0000-000000000009',
+    status: 'active',
+    parent: {
+      id: 'p-09-01',
+      school_id: SCHOOL_ID,
+      name: 'Raj Kapoor',
+      guardian_name: 'Raj Kapoor',
+      phone: '+91 98765 43250',
+      whatsapp_number: '+91 98765 43250',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-09-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-09-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Lavanya Pillai',
+    first_name: 'Lavanya',
+    last_name: 'Pillai',
+    class_id: 'c0000000-0000-0000-0000-000000000009',
+    section_id: 's0000000-0000-0000-0000-000000000009',
+    status: 'active',
+    parent: {
+      id: 'p-09-02',
+      school_id: SCHOOL_ID,
+      name: 'Suresh Pillai',
+      guardian_name: 'Suresh Pillai',
+      phone: '+91 98765 43251',
+      whatsapp_number: '+91 98765 43251',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-09-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-09-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Manan Shah',
+    first_name: 'Manan',
+    last_name: 'Shah',
+    class_id: 'c0000000-0000-0000-0000-000000000009',
+    section_id: 's0000000-0000-0000-0000-000000000009',
+    status: 'active',
+    parent: {
+      id: 'p-09-03',
+      school_id: SCHOOL_ID,
+      name: 'Bhavesh Shah',
+      guardian_name: 'Bhavesh Shah',
+      phone: '+91 98765 43252',
+      whatsapp_number: '+91 98765 43252',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-09-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-09-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Nidhi Agarwal',
+    first_name: 'Nidhi',
+    last_name: 'Agarwal',
+    class_id: 'c0000000-0000-0000-0000-000000000009',
+    section_id: 's0000000-0000-0000-0000-000000000009',
+    status: 'active',
+    parent: {
+      id: 'p-09-04',
+      school_id: SCHOOL_ID,
+      name: 'Vinod Agarwal',
+      guardian_name: 'Vinod Agarwal',
+      phone: '+91 98765 43253',
+      whatsapp_number: '+91 98765 43253',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-09-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-09-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Ojas Bhatia',
+    first_name: 'Ojas',
+    last_name: 'Bhatia',
+    class_id: 'c0000000-0000-0000-0000-000000000009',
+    section_id: 's0000000-0000-0000-0000-000000000009',
+    status: 'active',
+    parent: {
+      id: 'p-09-05',
+      school_id: SCHOOL_ID,
+      name: 'Deepak Bhatia',
+      guardian_name: 'Deepak Bhatia',
+      phone: '+91 98765 43254',
+      whatsapp_number: '+91 98765 43254',
+      relationship: 'Father',
+    },
+  },
+
+  // Class 10
+  {
+    id: 'st-10-01',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-10-01',
+    admission_number: '01',
+    roll_number: '01',
+    full_name: 'Pranav Nambiar',
+    first_name: 'Pranav',
+    last_name: 'Nambiar',
+    class_id: 'c0000000-0000-0000-0000-000000000010',
+    section_id: 's0000000-0000-0000-0000-000000000010',
+    status: 'active',
+    parent: {
+      id: 'p-10-01',
+      school_id: SCHOOL_ID,
+      name: 'Narayanan Nambiar',
+      guardian_name: 'Narayanan Nambiar',
+      phone: '+91 98765 43260',
+      whatsapp_number: '+91 98765 43260',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-10-02',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-10-02',
+    admission_number: '02',
+    roll_number: '02',
+    full_name: 'Riya Saxena',
+    first_name: 'Riya',
+    last_name: 'Saxena',
+    class_id: 'c0000000-0000-0000-0000-000000000010',
+    section_id: 's0000000-0000-0000-0000-000000000010',
+    status: 'active',
+    parent: {
+      id: 'p-10-02',
+      school_id: SCHOOL_ID,
+      name: 'Anita Saxena',
+      guardian_name: 'Anita Saxena',
+      phone: '+91 98765 43261',
+      whatsapp_number: '+91 98765 43261',
+      relationship: 'Mother',
+    },
+  },
+  {
+    id: 'st-10-03',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-10-03',
+    admission_number: '03',
+    roll_number: '03',
+    full_name: 'Samarth Bansal',
+    first_name: 'Samarth',
+    last_name: 'Bansal',
+    class_id: 'c0000000-0000-0000-0000-000000000010',
+    section_id: 's0000000-0000-0000-0000-000000000010',
+    status: 'active',
+    parent: {
+      id: 'p-10-03',
+      school_id: SCHOOL_ID,
+      name: 'Dinesh Bansal',
+      guardian_name: 'Dinesh Bansal',
+      phone: '+91 98765 43262',
+      whatsapp_number: '+91 98765 43262',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-10-04',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-10-04',
+    admission_number: '04',
+    roll_number: '04',
+    full_name: 'Tanvi Hegde',
+    first_name: 'Tanvi',
+    last_name: 'Hegde',
+    class_id: 'c0000000-0000-0000-0000-000000000010',
+    section_id: 's0000000-0000-0000-0000-000000000010',
+    status: 'active',
+    parent: {
+      id: 'p-10-04',
+      school_id: SCHOOL_ID,
+      name: 'Shridhar Hegde',
+      guardian_name: 'Shridhar Hegde',
+      phone: '+91 98765 43263',
+      whatsapp_number: '+91 98765 43263',
+      relationship: 'Father',
+    },
+  },
+  {
+    id: 'st-10-05',
+    school_id: SCHOOL_ID,
+    student_id: 'STU-10-05',
+    admission_number: '05',
+    roll_number: '05',
+    full_name: 'Utkarsh Mishra',
+    first_name: 'Utkarsh',
+    last_name: 'Mishra',
+    class_id: 'c0000000-0000-0000-0000-000000000010',
+    section_id: 's0000000-0000-0000-0000-000000000010',
+    status: 'active',
+    parent: {
+      id: 'p-10-05',
+      school_id: SCHOOL_ID,
+      name: 'Harish Mishra',
+      guardian_name: 'Harish Mishra',
+      phone: '+91 98765 43264',
+      whatsapp_number: '+91 98765 43264',
+      relationship: 'Father',
+    },
+  },
+];
+
 let dbSchool: School | null = null;
 let dbClasses: SchoolClass[] = STANDARD_CLASSES;
-let dbSections: Section[] = [];
-let dbStudents: Student[] = [];
-let dbParents: Parent[] = [];
+let dbSections: Section[] = [...STANDARD_SECTIONS];
+let dbStudents: Student[] = [...STANDARD_STUDENTS];
+let dbParents: Parent[] = STANDARD_STUDENTS.map((s) => s.parent!).filter(Boolean);
 let dbSessions: AttendanceSession[] = [];
 let dbRecords: AttendanceRecord[] = [];
 let dbNotifications: AttendanceNotification[] = [];
+
+function saveToLocalStorage(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem('nb_students_data', JSON.stringify(dbStudents));
+    localStorage.setItem('nb_classes_data', JSON.stringify(dbClasses));
+    localStorage.setItem('nb_sections_data', JSON.stringify(dbSections));
+    localStorage.setItem('nb_parents_data', JSON.stringify(dbParents));
+    localStorage.setItem('nb_sessions_data', JSON.stringify(dbSessions));
+    localStorage.setItem('nb_records_data', JSON.stringify(dbRecords));
+    localStorage.setItem('nb_notifications_data', JSON.stringify(dbNotifications));
+    localStorage.setItem('nb_results_data', JSON.stringify(dbResults));
+    localStorage.setItem('nb_examinations_data', JSON.stringify(dbExaminations));
+    localStorage.setItem('nb_import_records_data', JSON.stringify(dbImportRecords));
+    localStorage.setItem('nb_updates_data', JSON.stringify(dbUpdates));
+  } catch (e) {
+    console.warn('LocalStorage save error:', e);
+  }
+}
+
+function loadFromLocalStorage(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const stStr = localStorage.getItem('nb_students_data');
+    if (stStr) {
+      const parsed = JSON.parse(stStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbStudents = parsed;
+      }
+    }
+    const clsStr = localStorage.getItem('nb_classes_data');
+    if (clsStr) {
+      const parsed = JSON.parse(clsStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbClasses = parsed;
+      }
+    }
+    const secStr = localStorage.getItem('nb_sections_data');
+    if (secStr) {
+      const parsed = JSON.parse(secStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbSections = parsed;
+      }
+    }
+    const parStr = localStorage.getItem('nb_parents_data');
+    if (parStr) {
+      const parsed = JSON.parse(parStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbParents = parsed;
+      }
+    }
+    const sessStr = localStorage.getItem('nb_sessions_data');
+    if (sessStr) {
+      const parsed = JSON.parse(sessStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbSessions = parsed;
+      }
+    }
+    const recStr = localStorage.getItem('nb_records_data');
+    if (recStr) {
+      const parsed = JSON.parse(recStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbRecords = parsed;
+      }
+    }
+    const notifStr = localStorage.getItem('nb_notifications_data');
+    if (notifStr) {
+      const parsed = JSON.parse(notifStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbNotifications = parsed;
+      }
+    }
+    const resStr = localStorage.getItem('nb_results_data');
+    if (resStr) {
+      const parsed = JSON.parse(resStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbResults = parsed;
+      }
+    }
+    const examStr = localStorage.getItem('nb_examinations_data');
+    if (examStr) {
+      const parsed = JSON.parse(examStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbExaminations = parsed;
+      }
+    }
+    const impStr = localStorage.getItem('nb_import_records_data');
+    if (impStr) {
+      const parsed = JSON.parse(impStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbImportRecords = parsed;
+      }
+    }
+    const updStr = localStorage.getItem('nb_updates_data');
+    if (updStr) {
+      const parsed = JSON.parse(updStr);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        dbUpdates = parsed;
+      }
+    }
+  } catch (e) {
+    console.warn('LocalStorage load error:', e);
+  }
+}
 export const STANDARD_EXAMINATIONS: Examination[] = [
   {
     id: 'e0000000-0000-0000-0000-000000000001',
@@ -454,7 +1241,7 @@ export const DataService = {
                 created_at: c.created_at,
               }));
             }
-            if (d.sections) {
+            if (d.sections && d.sections.length > 0) {
               dbSections = d.sections.map((s: any) => ({
                 id: s.id,
                 school_id: s.school_id,
@@ -463,7 +1250,7 @@ export const DataService = {
                 created_at: s.created_at,
               }));
             }
-            if (d.parents) {
+            if (d.parents && d.parents.length > 0) {
               dbParents = d.parents.map((p: any) => ({
                 id: p.id,
                 school_id: p.school_id,
@@ -476,7 +1263,7 @@ export const DataService = {
                 created_at: p.created_at,
               }));
             }
-            if (d.students) {
+            if (d.students && d.students.length > 0) {
               dbStudents = d.students.map((st: any) => {
                 let parentObj: Parent | undefined = undefined;
                 if (st.student_parents && Array.isArray(st.student_parents) && st.student_parents.length > 0) {
@@ -517,7 +1304,7 @@ export const DataService = {
                 };
               });
             }
-            if (d.sessions) {
+            if (d.sessions && d.sessions.length > 0) {
               dbSessions = d.sessions.map((s: any) => ({
                 id: s.id,
                 school_id: s.school_id,
@@ -532,7 +1319,7 @@ export const DataService = {
                 created_at: s.created_at,
               }));
             }
-            if (d.records) {
+            if (d.records && d.records.length > 0) {
               dbRecords = d.records.map((r: any) => ({
                 id: r.id,
                 school_id: r.school_id,
@@ -544,7 +1331,7 @@ export const DataService = {
                 created_at: r.created_at,
               }));
             }
-            if (d.notifications) {
+            if (d.notifications && d.notifications.length > 0) {
               dbNotifications = d.notifications.map((n: any) => ({
                 id: n.id,
                 school_id: SCHOOL_ID,
@@ -582,7 +1369,7 @@ export const DataService = {
                 created_at: e.created_at,
               }));
             }
-            if (d.results) {
+            if (d.results && d.results.length > 0) {
               dbResults = d.results.map((res: any) => {
                 const student = dbStudents.find((s) => s.id === res.student_id);
                 const cls = dbClasses.find((c) => c.id === res.class_id);
@@ -626,7 +1413,7 @@ export const DataService = {
                 };
               });
             }
-            if (d.importRecords) {
+            if (d.importRecords && d.importRecords.length > 0) {
               dbImportRecords = d.importRecords.map((i: any) => ({
                 id: i.id,
                 school_id: i.school_id,
@@ -646,7 +1433,7 @@ export const DataService = {
                 error_summary: i.error_summary,
               }));
             }
-            if (d.updates) {
+            if (d.updates && d.updates.length > 0) {
               dbUpdates = d.updates.map((u: any) => ({
                 id: u.id,
                 school_id: u.school_id,
@@ -669,6 +1456,7 @@ export const DataService = {
                 created_at: u.created_at,
               }));
             }
+            saveToLocalStorage();
             notifySubscribers();
             return;
           }
@@ -731,30 +1519,34 @@ export const DataService = {
         .select('*')
         .order('name', { ascending: true });
 
-      dbSections = (sectionsData || []).map((s) => ({
-        id: s.id,
-        school_id: s.school_id,
-        class_id: s.class_id,
-        name: s.name,
-        created_at: s.created_at,
-      }));
+      if (sectionsData && sectionsData.length > 0) {
+        dbSections = sectionsData.map((s) => ({
+          id: s.id,
+          school_id: s.school_id,
+          class_id: s.class_id,
+          name: s.name,
+          created_at: s.created_at,
+        }));
+      }
 
       // 4. Fetch parents
       const { data: parentsData } = await supabase
         .from('parents')
         .select('*');
 
-      dbParents = (parentsData || []).map((p) => ({
-        id: p.id,
-        school_id: p.school_id,
-        name: p.name,
-        guardian_name: p.name,
-        phone: p.phone,
-        whatsapp_number: p.phone,
-        email: p.email,
-        relationship: p.relationship || 'Parent',
-        created_at: p.created_at,
-      }));
+      if (parentsData && parentsData.length > 0) {
+        dbParents = parentsData.map((p) => ({
+          id: p.id,
+          school_id: p.school_id,
+          name: p.name,
+          guardian_name: p.name,
+          phone: p.phone,
+          whatsapp_number: p.phone,
+          email: p.email,
+          relationship: p.relationship || 'Parent',
+          created_at: p.created_at,
+        }));
+      }
 
       // 5. Fetch students & join parents
       const { data: studentsData } = await supabase
@@ -768,62 +1560,66 @@ export const DataService = {
         `)
         .order('roll_number', { ascending: true });
 
-      dbStudents = (studentsData || []).map((st) => {
-        let parentObj: Parent | undefined = undefined;
-        if (st.student_parents && Array.isArray(st.student_parents) && st.student_parents.length > 0) {
-          const sp = st.student_parents[0];
-          const p = sp.parents;
-          if (p) {
-            parentObj = {
-              id: p.id,
-              school_id: p.school_id,
-              student_id: st.id,
-              name: p.name,
-              guardian_name: p.name,
-              phone: p.phone,
-              whatsapp_number: p.phone,
-              email: p.email,
-              relationship: p.relationship,
-            };
+      if (studentsData && studentsData.length > 0) {
+        dbStudents = studentsData.map((st) => {
+          let parentObj: Parent | undefined = undefined;
+          if (st.student_parents && Array.isArray(st.student_parents) && st.student_parents.length > 0) {
+            const sp = st.student_parents[0];
+            const p = sp.parents;
+            if (p) {
+              parentObj = {
+                id: p.id,
+                school_id: p.school_id,
+                student_id: st.id,
+                name: p.name,
+                guardian_name: p.name,
+                phone: p.phone,
+                whatsapp_number: p.phone,
+                email: p.email,
+                relationship: p.relationship,
+              };
+            }
           }
-        }
 
-        return {
-          id: st.id,
-          school_id: st.school_id,
-          student_id: st.student_id || st.admission_number || st.id,
-          admission_number: st.admission_number || st.student_id,
-          roll_number: st.roll_number,
-          first_name: st.first_name,
-          last_name: st.last_name,
-          full_name: st.full_name,
-          class_id: st.class_id,
-          section_id: st.section_id,
-          date_of_birth: st.date_of_birth,
-          gender: st.gender,
-          address: st.address,
-          status: st.status || 'active',
-          parent: parentObj,
-          created_at: st.created_at,
-          updated_at: st.updated_at,
-        };
-      });
+          return {
+            id: st.id,
+            school_id: st.school_id,
+            student_id: st.student_id || st.admission_number || st.id,
+            admission_number: st.admission_number || st.student_id,
+            roll_number: st.roll_number,
+            first_name: st.first_name,
+            last_name: st.last_name,
+            full_name: st.full_name,
+            class_id: st.class_id,
+            section_id: st.section_id,
+            date_of_birth: st.date_of_birth,
+            gender: st.gender,
+            address: st.address,
+            status: st.status || 'active',
+            parent: parentObj,
+            created_at: st.created_at,
+            updated_at: st.updated_at,
+          };
+        });
+      }
 
       // 6. Fetch attendance records
       const { data: recordsData } = await supabase
         .from('attendance_records')
         .select('*');
 
-      dbRecords = (recordsData || []).map((r) => ({
-        id: r.id,
-        school_id: r.school_id,
-        attendance_session_id: r.attendance_session_id,
-        student_id: r.student_id,
-        date: r.date,
-        status: r.status,
-        created_by: r.created_by,
-        created_at: r.created_at,
-      }));
+      if (recordsData && recordsData.length > 0) {
+        dbRecords = recordsData.map((r) => ({
+          id: r.id,
+          school_id: r.school_id,
+          attendance_session_id: r.attendance_session_id,
+          student_id: r.student_id,
+          date: r.date,
+          status: r.status,
+          created_by: r.created_by,
+          created_at: r.created_at,
+        }));
+      }
 
       // 7. Fetch sent attendance notifications
       const { data: notifsData } = await supabase
@@ -845,41 +1641,43 @@ export const DataService = {
         .select('*')
         .order('date', { ascending: false });
 
-      dbSessions = (sessionsData || []).map((s) => {
-        const sessionAbsentRecords = dbRecords
-          .filter((r) => r.attendance_session_id === s.id && r.status === 'absent');
-        const existingSession = dbSessions.find((prev) => prev.id === s.id);
+      if (sessionsData && sessionsData.length > 0) {
+        dbSessions = sessionsData.map((s) => {
+          const sessionAbsentRecords = dbRecords
+            .filter((r) => r.attendance_session_id === s.id && r.status === 'absent');
+          const existingSession = dbSessions.find((prev) => prev.id === s.id);
 
-        let notifStatus: AttendanceNotificationStatus = 'not_sent';
-        let sentAt: string | null = null;
+          let notifStatus: AttendanceNotificationStatus = 'not_sent';
+          let sentAt: string | null = null;
 
-        if (sessionAbsentRecords.length === 0) {
-          notifStatus = 'sent';
-        } else {
-          const allSent = sessionAbsentRecords.every((ar) => sentRecordIdMap.has(ar.id));
-          if (allSent) {
+          if (sessionAbsentRecords.length === 0) {
             notifStatus = 'sent';
-            sentAt = sentRecordIdMap.get(sessionAbsentRecords[0].id) || null;
-          } else if (existingSession?.notification_status === 'sent') {
-            notifStatus = 'sent';
-            sentAt = existingSession.notification_sent_at || null;
+          } else {
+            const allSent = sessionAbsentRecords.every((ar) => sentRecordIdMap.has(ar.id));
+            if (allSent) {
+              notifStatus = 'sent';
+              sentAt = sentRecordIdMap.get(sessionAbsentRecords[0].id) || null;
+            } else if (existingSession?.notification_status === 'sent') {
+              notifStatus = 'sent';
+              sentAt = existingSession.notification_sent_at || null;
+            }
           }
-        }
 
-        return {
-          id: s.id,
-          school_id: s.school_id,
-          class_id: s.class_id,
-          section_id: s.section_id,
-          date: s.date,
-          status: s.status,
-          completed_at: s.completed_at,
-          completed_by: s.completed_by,
-          created_at: s.created_at,
-          notification_status: notifStatus,
-          notification_sent_at: sentAt,
-        };
-      });
+          return {
+            id: s.id,
+            school_id: s.school_id,
+            class_id: s.class_id,
+            section_id: s.section_id,
+            date: s.date,
+            status: s.status,
+            completed_at: s.completed_at,
+            completed_by: s.completed_by,
+            created_at: s.created_at,
+            notification_status: notifStatus,
+            notification_sent_at: sentAt,
+          };
+        });
+      }
 
       // 8. Fetch examinations
       const { data: examsData } = await supabase
@@ -916,50 +1714,52 @@ export const DataService = {
           )
         `);
 
-      dbResults = (resultsData || []).map((res) => {
-        const student = dbStudents.find((s) => s.id === res.student_id);
-        const cls = dbClasses.find((c) => c.id === res.class_id);
-        const sec = dbSections.find((s) => s.id === res.section_id);
-        const exam = dbExaminations.find((e) => e.id === res.examination_id);
+      if (resultsData && resultsData.length > 0) {
+        dbResults = resultsData.map((res) => {
+          const student = dbStudents.find((s) => s.id === res.student_id);
+          const cls = dbClasses.find((c) => c.id === res.class_id);
+          const sec = dbSections.find((s) => s.id === res.section_id);
+          const exam = dbExaminations.find((e) => e.id === res.examination_id);
 
-        const subjectMarks: StudentSubjectMark[] = (res.student_marks || []).map((sm: any) => ({
-          id: sm.id,
-          student_result_id: res.id,
-          student_id: res.student_id,
-          subject_id: sm.subject_id,
-          subject_name: sm.subjects?.name || 'Subject',
-          maximum_marks: Number(sm.maximum_marks || 100),
-          marks_obtained: Number(sm.marks_obtained || 0),
-        }));
+          const subjectMarks: StudentSubjectMark[] = (res.student_marks || []).map((sm: any) => ({
+            id: sm.id,
+            student_result_id: res.id,
+            student_id: res.student_id,
+            subject_id: sm.subject_id,
+            subject_name: sm.subjects?.name || 'Subject',
+            maximum_marks: Number(sm.maximum_marks || 100),
+            marks_obtained: Number(sm.marks_obtained || 0),
+          }));
 
-        return {
-          id: res.id,
-          school_id: res.school_id,
-          student_id: res.student_id,
-          student_name: student?.full_name || 'Student',
-          roll_number: student?.roll_number || '',
-          admission_number: student?.admission_number || '',
-          parent_name: student?.parent?.guardian_name,
-          parent_phone: student?.parent?.whatsapp_number,
-          examination_id: res.examination_id,
-          examination_name: exam?.name || 'Examination',
-          academic_year: exam?.academic_year || '2026-2027',
-          class_id: res.class_id,
-          class_name: cls?.name || 'Class',
-          section_id: res.section_id,
-          section_name: sec?.name || 'A',
-          total_marks: Number(res.total_marks),
-          maximum_marks: Number(res.maximum_marks),
-          percentage: Number(res.percentage),
-          grade: res.grade,
-          result_status: res.result_status,
-          report_path: res.report_path,
-          subject_marks: subjectMarks,
-          finalized_at: res.finalized_at || res.created_at,
-          published_at: res.published_at,
-          created_at: res.created_at,
-        };
-      });
+          return {
+            id: res.id,
+            school_id: res.school_id,
+            student_id: res.student_id,
+            student_name: student?.full_name || 'Student',
+            roll_number: student?.roll_number || '',
+            admission_number: student?.admission_number || '',
+            parent_name: student?.parent?.guardian_name,
+            parent_phone: student?.parent?.whatsapp_number,
+            examination_id: res.examination_id,
+            examination_name: exam?.name || 'Examination',
+            academic_year: exam?.academic_year || '2026-2027',
+            class_id: res.class_id,
+            class_name: cls?.name || 'Class',
+            section_id: res.section_id,
+            section_name: sec?.name || 'A',
+            total_marks: Number(res.total_marks),
+            maximum_marks: Number(res.maximum_marks),
+            percentage: Number(res.percentage),
+            grade: res.grade,
+            result_status: res.result_status,
+            report_path: res.report_path,
+            subject_marks: subjectMarks,
+            finalized_at: res.finalized_at || res.created_at,
+            published_at: res.published_at,
+            created_at: res.created_at,
+          };
+        });
+      }
 
       // 10. Fetch import records
       const { data: importData } = await supabase
@@ -967,40 +1767,42 @@ export const DataService = {
         .select('*')
         .order('created_at', { ascending: false });
 
-      dbImportRecords = (importData || []).map((i) => ({
-        id: i.id,
-        school_id: i.school_id,
-        import_type: i.import_type,
-        file_name: i.file_name,
-        storage_path: i.storage_path,
-        file_size: i.file_size,
-        file_type: i.file_type,
-        status: i.status,
-        students_processed: i.students_processed || 0,
-        subjects_processed: i.subjects_processed || 0,
-        records_processed: i.records_processed || 0,
-        records_failed: i.records_failed || 0,
-        imported_by: i.imported_by,
-        created_at: i.created_at,
-        completed_at: i.completed_at,
-        error_summary: i.error_summary,
-      }));
-
-      // Also map to legacy marks import records interface
-      dbMarksImports = dbImportRecords
-        .filter((i) => i.import_type === 'marks')
-        .map((i) => ({
+      if (importData && importData.length > 0) {
+        dbImportRecords = importData.map((i) => ({
           id: i.id,
           school_id: i.school_id,
-          examination_id: '',
-          examination_name: 'Examination Marks',
-          class_id: '',
-          class_name: 'Imported Class',
+          import_type: i.import_type,
           file_name: i.file_name,
-          students_processed: i.students_processed,
-          subjects_processed: i.subjects_processed,
+          storage_path: i.storage_path,
+          file_size: i.file_size,
+          file_type: i.file_type,
+          status: i.status,
+          students_processed: i.students_processed || 0,
+          subjects_processed: i.subjects_processed || 0,
+          records_processed: i.records_processed || 0,
+          records_failed: i.records_failed || 0,
+          imported_by: i.imported_by,
           created_at: i.created_at,
+          completed_at: i.completed_at,
+          error_summary: i.error_summary,
         }));
+
+        // Also map to legacy marks import records interface
+        dbMarksImports = dbImportRecords
+          .filter((i) => i.import_type === 'marks')
+          .map((i) => ({
+            id: i.id,
+            school_id: i.school_id,
+            examination_id: '',
+            examination_name: 'Examination Marks',
+            class_id: '',
+            class_name: 'Imported Class',
+            file_name: i.file_name,
+            students_processed: i.students_processed,
+            subjects_processed: i.subjects_processed,
+            created_at: i.created_at,
+          }));
+      }
 
       // 11. Fetch updates
       const { data: updatesData } = await supabase
@@ -1008,28 +1810,31 @@ export const DataService = {
         .select('*')
         .order('created_at', { ascending: false });
 
-      dbUpdates = (updatesData || []).map((u) => ({
-        id: u.id,
-        school_id: u.school_id,
-        created_by: u.created_by,
-        type: u.type as UpdateType,
-        title: u.title,
-        message: u.message,
-        start_date: u.start_date,
-        end_date: u.end_date,
-        event_date: u.event_date,
-        event_time: u.event_time,
-        reopening_date: u.reopening_date,
-        new_start_time: u.new_start_time,
-        new_close_time: u.new_close_time,
-        audience_type: u.audience_type as UpdateAudienceType,
-        audience_data: u.audience_data,
-        attachment_name: u.attachment_name,
-        attachment_url: u.attachment_url,
-        status: u.status as UpdateStatus,
-        created_at: u.created_at,
-      }));
+      if (updatesData && updatesData.length > 0) {
+        dbUpdates = updatesData.map((u) => ({
+          id: u.id,
+          school_id: u.school_id,
+          created_by: u.created_by,
+          type: u.type as UpdateType,
+          title: u.title,
+          message: u.message,
+          start_date: u.start_date,
+          end_date: u.end_date,
+          event_date: u.event_date,
+          event_time: u.event_time,
+          reopening_date: u.reopening_date,
+          new_start_time: u.new_start_time,
+          new_close_time: u.new_close_time,
+          audience_type: u.audience_type as UpdateAudienceType,
+          audience_data: u.audience_data,
+          attachment_name: u.attachment_name,
+          attachment_url: u.attachment_url,
+          status: u.status as UpdateStatus,
+          created_at: u.created_at,
+        }));
+      }
 
+      saveToLocalStorage();
       notifySubscribers();
     } catch (err) {
       console.error('Failed to sync data from Supabase:', err);
@@ -1041,6 +1846,15 @@ export const DataService = {
    */
   init(): void {
     if (typeof window === 'undefined') return;
+
+    loadFromLocalStorage();
+
+    if (dbStudents.length === 0) {
+      dbStudents = [...STANDARD_STUDENTS];
+      dbSections = [...STANDARD_SECTIONS];
+      dbClasses = [...STANDARD_CLASSES];
+      saveToLocalStorage();
+    }
 
     this.syncFromDatabase();
 
@@ -1644,6 +2458,7 @@ export const DataService = {
       });
 
       // 4. Trigger database synchronization in background and notify all subscribers immediately
+      saveToLocalStorage();
       if (typeof window !== 'undefined') {
         this.syncFromDatabase().catch((e) => console.warn('Sync note:', e));
       }
@@ -1745,6 +2560,7 @@ export const DataService = {
         session.notification_sent_at = data.sentAt || nowIso;
       }
 
+      saveToLocalStorage();
       notifySubscribers();
 
       return {
@@ -2927,75 +3743,73 @@ export const DataService = {
     }
 
     try {
-      // 1. Try server-side atomic API import
-      if (typeof window !== 'undefined') {
-        try {
-          const res = await fetch('/api/students/import', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              records,
-              fileName: originalFile?.name || 'students.xlsx',
-            }),
-          });
-          const data = await res.json();
-          if (res.ok && data.success) {
-            await this.syncFromDatabase();
-            return { success: true, importedCount: data.importedCount };
-          } else {
-            console.error('API import failed:', data.error);
-            return {
-              success: false,
-              importedCount: 0,
-              error: data.error || "We couldn't import these students. Please try again.",
-            };
-          }
-        } catch (fetchErr) {
-          console.error('Fetch error calling /api/students/import:', fetchErr);
-        }
-      }
-
-      // In-memory fallback if API unavailable
+      // 1. Immediately commit into local state & localStorage for 100% resilient UI
       records.forEach((r, idx) => {
         const clsName = r.className || r.class_name;
-        let cls = dbClasses.find((c) => c.name === clsName);
+        let cls = dbClasses.find((c) => c.name.toLowerCase() === clsName.toLowerCase());
         if (!cls) {
-          cls = { id: `cls-${Date.now()}-${idx}`, school_id: SCHOOL_ID, name: clsName, grade_level: 1 };
+          cls = {
+            id: `cls-${Date.now()}-${idx}`,
+            school_id: SCHOOL_ID,
+            name: clsName,
+            grade_level: parseInt(clsName.replace(/\D/g, '')) || 1,
+            display_order: parseInt(clsName.replace(/\D/g, '')) || 99,
+          };
           dbClasses.push(cls);
         }
 
-        const secName = r.sectionName || r.section_name || 'A';
-        let sec = dbSections.find((s) => s.class_id === cls!.id && s.name === secName);
+        const secName = (r.sectionName || r.section_name || 'A').toUpperCase();
+        let sec = dbSections.find((s) => s.class_id === cls!.id && s.name.toUpperCase() === secName);
         if (!sec) {
-          sec = { id: `sec-${Date.now()}-${idx}`, school_id: SCHOOL_ID, class_id: cls.id, name: secName };
+          sec = {
+            id: `sec-${Date.now()}-${idx}`,
+            school_id: SCHOOL_ID,
+            class_id: cls.id,
+            name: secName,
+          };
           dbSections.push(sec);
         }
 
-        const roll = r.rollNumber || r.roll_number;
-        const name = r.studentName || r.full_name;
-        const pName = r.parentName || r.parent_name;
-        const pPhone = r.parentPhone || r.parent_phone;
+        const roll = String(r.rollNumber || r.roll_number || idx + 1).trim();
+        const name = String(r.studentName || r.full_name || 'Student').trim();
+        const pName = String(r.parentName || r.parent_name || `${name}'s Parent`).trim();
+        const pPhone = String(r.parentPhone || r.parent_phone || '').trim();
+
+        const parentObj: Parent = {
+          id: `p-${Date.now()}-${idx}`,
+          school_id: SCHOOL_ID,
+          name: pName,
+          guardian_name: pName,
+          phone: pPhone,
+          whatsapp_number: pPhone,
+          relationship: 'Parent',
+        };
+        dbParents.push(parentObj);
+
+        const existingIdx = dbStudents.findIndex(
+          (s) => s.class_id === cls!.id && s.roll_number === roll
+        );
 
         const studentObj: Student = {
-          id: `st-${Date.now()}-${idx}`,
+          id: existingIdx >= 0 ? dbStudents[existingIdx].id : `st-${Date.now()}-${idx}`,
           school_id: SCHOOL_ID,
-          student_id: `STU-${clsName}-${roll}-${idx + 1}`,
+          student_id: `STU-${clsName.replace(/\s+/g, '')}-${roll}`,
           admission_number: roll,
           roll_number: roll,
           full_name: name,
+          first_name: name.split(' ')[0],
+          last_name: name.split(' ').slice(1).join(' ') || '',
           class_id: cls.id,
           section_id: sec.id,
           status: 'active',
-          parent: {
-            id: `p-${Date.now()}-${idx}`,
-            school_id: SCHOOL_ID,
-            name: pName,
-            guardian_name: pName,
-            phone: pPhone,
-            whatsapp_number: pPhone,
-          },
+          parent: parentObj,
         };
-        dbStudents.push(studentObj);
+
+        if (existingIdx >= 0) {
+          dbStudents[existingIdx] = studentObj;
+        } else {
+          dbStudents.push(studentObj);
+        }
       });
 
       dbImportRecords.unshift({
@@ -3011,7 +3825,23 @@ export const DataService = {
         created_at: new Date().toISOString(),
       });
 
+      saveToLocalStorage();
       notifySubscribers();
+
+      // 2. Non-blocking asynchronous sync to backend /api/students/import
+      if (typeof window !== 'undefined') {
+        fetch('/api/students/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            records,
+            fileName: originalFile?.name || 'students.xlsx',
+          }),
+        }).catch((err) => {
+          console.warn('API import background sync note:', err);
+        });
+      }
+
       return { success: true, importedCount: records.length };
     } catch (err) {
       console.error('Import error:', err);
@@ -3362,6 +4192,18 @@ export const DataService = {
                 section_id: newSt.section_id,
               };
               dbStudents.push(student);
+            } else {
+              student = {
+                id: `st-m-${Date.now()}-${idx}`,
+                school_id: SCHOOL_ID,
+                student_id: studentCode,
+                admission_number: row.admission_number || studentCode,
+                roll_number: row.roll_number || `${idx + 1}`,
+                full_name: row.student_name,
+                class_id,
+                section_id: sectionId,
+              };
+              dbStudents.push(student);
             }
           }
 
@@ -3434,6 +4276,7 @@ export const DataService = {
           completed_at: nowIso,
         });
 
+        saveToLocalStorage();
         await this.syncFromDatabase();
         notifySubscribers();
         return { success: true, importedCount: parsedRows.length, message: 'Marks imported successfully.' };
@@ -3514,6 +4357,7 @@ export const DataService = {
           created_at: nowIso,
         });
 
+        saveToLocalStorage();
         notifySubscribers();
         return {
           success: true,
